@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='warmindo',
-    version='0.4',  # Perbarui nomor versi menjadi 0.4 atau versi yang lebih baru
+    version='0.5', 
     packages=find_packages(),
     install_requires=[
         'SQLAlchemy',
@@ -33,6 +33,8 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        # SUPPORT PYTHON 3.11 su311
+        'Programming Language :: Python :: 3.11', 
     ],
     keywords='framework web warmindo python',
 )
