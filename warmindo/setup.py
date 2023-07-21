@@ -2,11 +2,14 @@ from setuptools import setup, find_packages
 
 setup(
     name='warmindo',
-    version='0.1',
+    version='0.2',
     packages=find_packages(),
     install_requires=[
-        'SQLAlchemy',  
-        'Flask',       
+    'SQLAlchemy',
+    'Flask',
+    'mysql-connector-python',
+    'scikit-learn',           
+    'python-telegram-bot',     
     ],
     entry_points={
         'console_scripts': [
