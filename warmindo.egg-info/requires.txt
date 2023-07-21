@@ -1,5 +1,0 @@
-SQLAlchemy
-Flask
-mysql-connector-python
-scikit-learn
-python-telegram-bot
