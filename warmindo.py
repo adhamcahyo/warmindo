@@ -1,17 +1,14 @@
 from warmindo.core.routing import Router
 from warmindo.core.middleware import Middleware
 from warmindo.modules.custom_auth import authenticate_user
-from warmindo.modules.custom_logging import configure_custom_logging
 from warmindo.modules.custom_helpers import calculate_square, generate_random_string
 from warmindo.database.models import User, Base, create_engine
-from warmindo.core.response import Response  # Mengimpor kelas Response dari modul yang sesuai
 
 app = Router()
 middleware = Middleware()
 
 def custom_logging_middleware(request):
-    configure_custom_logging()
-    return None
+    print("Logging request:", request.method, request.url)
 
 middleware.add_middleware(custom_logging_middleware)
 
@@ -22,14 +19,14 @@ def login(request):
     password = data.get("password")
     
     if authenticate_user(username, password):
-        return Response({"message": "Login successful!"})  # Menggunakan kelas Response untuk merespons
+        return {"message": "Login successful!"}
     else:
-        return Response({"message": "Login failed. Invalid credentials."}, status=401)  # Menggunakan kelas Response dengan status 401
+        return {"message": "Login failed. Invalid credentials."}, 401
 
 @app.route("/square/<int:num>")
 def square(request, num):
     result = calculate_square(num)
-    return Response({"result": result})  # Menggunakan kelas Response untuk merespons
+    return {"result": result}
 
 @app.route("/create_user", methods=["POST"])
 def create_user(request):
@@ -47,7 +44,7 @@ def create_user(request):
     session.commit()
     session.close()
     
-    return Response({"message": "User created successfully"})  
+    return {"message": "User created successfully"}
 
 app.add_middleware(middleware)
 
