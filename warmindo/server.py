@@ -1,5 +1,5 @@
 from http.server import HTTPServer, SimpleHTTPRequestHandler
-
+import webbrowser
 def main():
     port = 8000
     server_address = ('', port)
