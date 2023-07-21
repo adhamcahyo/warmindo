@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='warmindo',
-    version='0.2',
+    version='0.3',
     packages=find_packages(),
     install_requires=[
     'SQLAlchemy',
@@ -13,7 +13,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'runserve = warmindo.server:main'
+            'warmindo=gas:main'
         ]
     },
     author='adham cahyo',
