@@ -17,7 +17,7 @@ setup(
         ]
     },
     author='adham cahyo',
-    author_email='email@anda.com',
+    author_email='arnolisarnol@gmail.com',
     description='Framework Warmindo berbasis Python',
     url='https://github.com/adhamcahyo/warmindo',  
     project_urls={
